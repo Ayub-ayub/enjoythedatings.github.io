@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body>
+    <div class="complete">
+        <center>
+            <h1 class="tom">Please Create Your Profile</h1>
+            <div>
+                <div class="dating">
+                    <form name="myForm">
+
+                        <div>
+                            <label>UserName</label><br>
+                            <input type="text" name="UserName" id="UserName" autocomplete="off" /><br></br>
+                            <span id="userSpan" class="errmsg" style="color: red;"></span>
+                        </div>
+                        <div>
+
+                            <label>Password</label><br>
+                            <input type="password" name="Password" placeholder="enter your password" autocomplete="off"
+                                id="password"><br><br>
+                            <span id="pasSpan" style="color: red;"></span>
+
+                        </div>
+                        <div>
+                            <label>Age</label><br>
+                            <input type="number" name="age" id="age" autocomplete="off" /><br><br>
+                            <span id="userAge" style="color: red;"></span>
+                        </div>
+                        <div>
+                            <label>Address</label><br>
+                            <input type="text" name="address" id="address" autocomplete="off" /><br><br>
+                            <span id="userAddress" style="color: red;"></span>
+
+                        </div>
+
+                        <div>
+                            <p>Select Your Gender</p>
+                            <input type="radio" name="gender" value="male">Male
+                            <input type="radio" name="gender" value="female">Female<br><br>
+                            <span id="genSpan" style="color: red;"></span>
+                        </div>
+                        <div>
+                            <input type="file" accept="image/*" name="image" id="file" />
+                            <label for="file" style="cursor: pointer;">Upload Image</label>
+                            <span id="imgSpan" style="color: red;"></span><br><br>
+                        </div>
+
+
+                    </form>
+
+                    <button onclick="check()">Submit</button>
+                </div>
+            </div>
+        </center>
+
+        <div class="mag"> 
+            <h2>If Created Please LogIn</h2>
+            <button class ="tom" onclick="app()" style="color: blue;">Login</button>
+
+        </div>
+    </div>
+
+    <script>
+        function validationDa() {
+            // console.log("abcd",document.forms["myForm"]["output"])
+            let name = document.forms["myForm"]["UserName"].value;
+            let password = document.forms["myForm"]["Password"].value;
+            let age = document.forms["myForm"]["age"].value;
+            let address = document.forms["myForm"]["address"].value;
+            var gender = document.myForm.gender;
+            var fileInput = document.getElementById('file');
+            var filePath = fileInput.value;
+            var allowedExtensions =
+                /(\.png|\.jpg|\.jpeg|\.gif)$/i;
+
+            if (name === "") {
+                document.getElementById('userSpan').innerHTML = "**Username is required";
+                return false;
+            } else if (password.length < 8 || password.length > 20) {
+                document.getElementById('pasSpan').innerHTML = "**Please enter valid password";
+
+
+                return false;
+            }
+
+            else if (age === "") {
+                document.getElementById('userAge').innerHTML = "**Age is required";
+
+                return false;
+            }
+            else if (address === "") {
+                document.getElementById('userAddress').innerHTML = "**Address is required";
+
+                return false;
+            }
+            else if (gender.value.length <= 0) {
+                document.getElementById('genSpan').innerHTML = "**Enter Gender";
+                console.log(gender.value.length)
+                return false;
+
+            }
+
+            else if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type :png,jpg,jpeg,png,gif');
+                fileInput.value = '';
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+        function app() {
+            window.location.href = "/home/user/age/images/login.html"
+        }
+
+        function redirect() {
+            window.location.href = "/home/user/age/images/login.html"
+        }
+        function dating() {
+
+            return fetch('http://localhost:8080/Datings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    UserName: document.forms["myForm"]["UserName"].value,
+                    Password: document.forms["myForm"]["Password"].value,
+                    Age: document.forms["myForm"]["age"].value,
+                    Address: document.forms["myForm"]["address"].value,
+                    Gender: document.myForm.gender.value,
+                    image: document.getElementById('file').files[0].name
+
+                })
+
+
+            })
+                .then(res => res.json())
+                .then((data) => { console.log("data", data); return (data); })
+                .catch(error => console.log(error));
+        }
+        function check() {
+            var x = validationDa();
+            if (x == true) {
+                dating().then(response => {
+                    console.log("res", response);
+                    redirect()
+                    alert("successful")
+                })
+                    .catch(e => alert("Failed"))
+                //     console.log("Check", y.Object)
+                //     if (y == data) {
+                //         alert("successful");
+                //         redirect();
+
+                //     // } else {
+                //     //     console.log("error in me")
+                //     // }
+            }
+            else {
+                alert("failed")
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>

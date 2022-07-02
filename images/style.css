@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.backimg{
+    /* width: 100%;
+    height: 50%; */
+    
+    background-image:url('./wp3720759.webp') ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+padding: 260px;
+border-style: double;
+
+}
+
+.content{
+    color:black;
+
+}
+
+.box{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+width: 20%;
+position:relative;
+bottom: 200px;
+padding: 5px;
+}
+
+.plot{
+    background-image:url('./Taj_Mahal\,_Agra\,_India_edit2.jpg') ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+padding: 200px;
+border-style: double;
+background-attachment: fixed;
+scroll-behavior: off;
+}
+
+
+
+
+
+.a{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color: red;
+    background-color:black;
+    padding: 3%;
+    margin: 10%;
+    position: relative;
+    top: 270PX;
+}
+
+.b{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color:RED;
+    background-color:black;
+    padding: 3%;
+    margin: 10%;
+    position: relative;
+    top: 140px;
+}
+
+.c{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color: RED;
+    background-color:black;
+    padding: 3%;
+    margin: 10%;
+}
+
+.d{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color: RED;
+    background-color: black;
+    padding: 3%;
+    margin: 10%;
+}
+.e{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color:RED;
+    background-color: black;
+    padding: 3%;
+    margin: 10%;
+}
+.f{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    color:RED;
+    background-color: black;
+    padding: 3%;
+    margin: 10%;
+}
+.col{
+    position: relative;
+    left: 900px;
+    bottom: 737px;
+}
+.dating{
+    box-sizing: border-box;
+    outline: solid 2px black;
+    text-shadow: blue;
+width: 20%;
+position:relative;
+background-color: lavender;
+}
+
+.complete{
+    background-image:url('./simple-valentines-day-background-with-text-space_1017-35916.webp') ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+padding: 228px;
+border-style: double;
+background-attachment: fixed;
+scroll-behavior: off
+}
+
+.mf{
+    color: blanchedalmond;
+    background-image:url('./4396986.webp') ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+padding: 800px;
+border-style: double;
+background-attachment: fixed;
+scroll-behavior: off;
+position: fixed;
+}
+
+.male{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:30%;
+    color:black;
+    background-color:aquamarine;
+    padding: 30%;
+    margin: 10%;
+    position:relative;
+    left:-390px;
+bottom: 500px;
+text-size-adjust: 20px;
+}
+
+.female{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:30%;
+    color:black;
+    background-color:aquamarine;
+    padding: 30%;
+    margin: 10%;
+    position: relative;
+    left: 450px;
+bottom: 710px;
+text-size-adjust: 20px;
+
+}
+
+.tm{
+    background-color: pink;
+}
+
+.fm{
+    background-color: aquamarine;
+
+}
+
+.tom{
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:20%;
+    height: 20%;
+    color:black;
+}
+
+
+.mag{
+position: relative;   
+left: 560px; 
+top: 50px;
+}
+
+.login{
+    /* background-image: url(./login.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center; */
+    background-color:mediumturquoise;
+    box-sizing: border-box;
+    outline: solid 2px blue;
+    width:100%;
+    height: 100vh;
+    color:black;
+}
+.form{
+     padding:30px;
+     padding-top:15%;
+        text-align:center;
+    
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@200;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #4b5c66;
+}
+.container1 {
+  --light-color: #fff;
+  height: 420px;
+  width: 350px;
+  background: var(--light-color);
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  box-shadow: 0px 0px 15px 0px black;
+}
+.chat-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  background-color: #0652c0;
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+.chat-header .logo {
+  height: 35px;
+  width: 35px;
+  box-shadow: 0px 0px 10px 0px black;
+}
+.chat-header img {
+  height: 100%;
+  width: 100%;
+}
+.chat-header .title {
+  padding-left: 10px;
+}
+.chat-body {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  align-items: flex-end;
+  overflow-y: auto;
+}
+.chat-input {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+}
+.input-sec {
+  flex: 9;
+}
+.send {
+  flex: 1;
+  padding-right: 4px;
+  size: 1px;
+}
+#txtInput {
+  line-height: 30px;
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  caret-color: black;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.chatbot-message,
+.user-message {
+  padding: 8px;
+  background: #ccc;
+  margin: 5px;
+  width: max-content;
+  border-radius: 10px 3px 10px 10px;
+}
+.chatbot-message {
+  background: #0652c0;
+  color: var(--light-color);
+  align-self: flex-start;
+  border-radius: 10px 10px 3px 10px;
+}
+
+.dom{
+    width: 40%;
+    height: 4%;
+}
+
+.domy{
+    
+        width: 40%;
+        height: 4%;
+    
+}

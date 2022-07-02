@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat-box</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="container1">
+        <div class="chat-header">
+          <div class="logo">
+            <img src="./letschat.jpg" alt="cwt" />
+          </div>
+          <div class="title">Let's Chat</div>
+        </div>
+        <div class="chat-body"></div>
+        <div class="chat-input">
+          <div class="input-sec">
+            <input type="text" id="txtInput" placeholder="Type here" autofocus />
+          </div>
+          <div class="send">
+            <img src="./finalsend.svg" alt="send" />
+          </div>
+        </div>
+      </div>
+
+      <script>
+          const chatBody = document.querySelector(".chat-body");
+const txtInput = document.querySelector("#txtInput");
+const send = document.querySelector(".send");
+
+send.addEventListener("click", () => renderUserMessage());
+
+txtInput.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    renderUserMessage();
+  }
+});
+
+const renderUserMessage = () => {
+  const userInput = txtInput.value;
+  renderMessageEle(userInput, "user");
+  txtInput.value = "";
+  setTimeout(() => {
+    renderChatbotResponse(userInput);
+    setScrollPosition();
+  }, 600);
+};
+
+const renderChatbotResponse = (userInput) => {
+  const res = getChatbotResponse(userInput);
+  renderMessageEle(res);
+};
+
+const renderMessageEle = (txt, type) => {
+  let className = "user-message";
+  if (type !== "user") {
+    className = "chatbot-message";
+  }
+  const messageEle = document.createElement("div");
+  const txtNode = document.createTextNode(txt);
+  messageEle.classList.add(className);
+  messageEle.append(txtNode);
+  chatBody.append(messageEle);
+};
+
+const getChatbotResponse = (userInput) => {
+  return responseObj[userInput] == undefined
+    ? "Please try something else"
+    : responseObj[userInput];
+};
+
+const setScrollPosition = () => {
+  if (chatBody.scrollHeight > 0) {
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+};
+
+const responseObj = {
+  hi:"hello",
+  hello: "Hey ! How are you doing ?",
+  hey: "Hey! What's Up",
+  today: new Date().toDateString(),
+  time: new Date().toLocaleTimeString(),
+  "how are you":"am fine",
+  "i love you":"i love you too",
+  "lunch":"done",
+  "dinner":"not yet",
+  "breakfast":"over",
+  "nice dp":"thank you",
+  "happy birthday to you":"thank you",
+  "what do you do":"software engineer",
+  "are you free":"yeah",
+  "can we meet":"give me some time",
+  "can we meet today":"not today ,sunday",
+  "place":"agara bake",
+  "u r from":"mumbai",
+  "num please":"please take subscription",
+};
+      </script>
+</body>
+</html>
